@@ -1,0 +1,17 @@
+{
+	"client_id": "<https://console.developers.google.com>"
+	"client_secret": "<https://console.developers.google.com>"
+	"redirect_url": "<https://console.developers.google.com>"
+}
+{
+	"client_id": "<https://console.developers.google.com>"
+	"client_secret": "<https://console.developers.google.com>"
+	"redirect_url": "<https://console.developers.google.com>"
+	"profile": "XXXX",
+	"tokens": {
+		"access_token": "",
+		"token_type": "",
+		"refresh_token": "",
+		"expiry_date": ""
+	}
+}
