@@ -4,7 +4,7 @@ var React = require( 'react' );
 
 var update = function( component ){
 	return function(){
-		$.get( '/api/activeUsers' ).done( function( data ){
+		$.get( 'api/activeUsers' ).done( function( data ){
 			component.setState( {activeUsers: data.activeUsers} );
 			component.forceUpdate();
 		} );
