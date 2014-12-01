@@ -26,3 +26,5 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+server/config/settings.json
+client/js/main.dist.js
