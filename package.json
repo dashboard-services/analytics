@@ -10,8 +10,7 @@
     "flux": "^2.0.1",
     "googleapis": "^1.0.21",
     "nconf": "^0.6.9",
-    "react": "^0.12.1",
-    "socket.io": "^1.2.1"
+    "react": "^0.12.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

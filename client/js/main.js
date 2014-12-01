@@ -6,4 +6,4 @@ var React = require( 'react' ),
 
 debug.enable( 'GoogleAnalytics:*' );
 
-React.render( <ActiveUsers socket={io.connect(window.location.href)}/>, document.getElementById( 'active-users-container' ) );
+React.render( <ActiveUsers />, document.getElementById( 'active-users-container' ) );

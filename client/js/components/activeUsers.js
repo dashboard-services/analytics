@@ -2,16 +2,21 @@
 
 var React = require( 'react' );
 
+var update = function( component ){
+	return function(){
+		$.get( '/api/activeUsers' ).done( function( data ){
+			component.setState( {activeUsers: data.activeUsers} );
+			component.forceUpdate();
+		} );
+	};
+};
+
 var ActiveUsers = React.createClass( {
 	getInitialState: function(){
 		return {activeUsers: 0};
 	},
 	componentDidMount: function(){
-		var self = this;
-		this.props.socket.on( 'update', function( data ){
-			self.setState( {activeUsers: data.activeUsers} );
-			self.forceUpdate();
-		} );
+		setInterval( update( this ), /* each 3 secs */ 1000 * 3 );
 	},
   render: function(){
     var self = this;
