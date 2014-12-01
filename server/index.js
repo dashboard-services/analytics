@@ -6,9 +6,17 @@ var express = require( 'express' ),
 		path = require( 'path' ),
 		nconf = require( 'nconf' ).argv().env().file( path.join( __dirname, 'config', 'settings.json' ) ),
 		debug = require( 'debug' )( 'Analytics:app' ),
+		fs = require( 'fs' ),
 		RTAnalytics = require( './libs/analytics' );
 
 var PORT = nconf.get( 'PORT' ) || 3000;
+
+router.use('/', express.static(__dirname + '/../client'));
+
+router.get( '/', function( req, res, next ){
+	res.set('Content-Type', 'text/html');
+	fs.createReadStream( path.join( __dirname, '..', 'client', 'index.html' ) ).pipe( res );
+} );
 
 router.get( '/api/activeUsers', function( req, res, next ){
 		RTAnalytics.oauth2Client.setCredentials( require('./config/settings').tokens );
